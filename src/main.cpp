@@ -4,10 +4,15 @@
 #include <Arduino.h>
 #include <Wire.h>
 
+// Definição dos pinos I2C padrão do ESP32 (podem ser alterados se necessário)
+#define I2C_SDA 21
+#define I2C_SCL 22
+
 Adafruit_PN532 nfc(0, 0, &Wire); // I2C; sem fios extras de IRQ/RESET
 Adafruit_SSD1306 display(128, 64, &Wire, -1);
 
-const uint8_t AUTHORIZED_UID[] = {0x7F, 0xD5, 0x50, 0xF6};
+// const uint8_t AUTHORIZED_UID[] = {0x7F, 0xD5, 0x50, 0xF6};
+const uint8_t AUTHORIZED_UID[] = {0x49, 0x5B, 0xBC, 0x61};
 const uint8_t AUTHORIZED_UID_LENGTH = sizeof(AUTHORIZED_UID);
 uint8_t idleFrame = 0;
 
@@ -378,7 +383,7 @@ void printUid(const uint8_t *uid, uint8_t length) {
 
 void setup() {
   Serial.begin(115200);
-  Wire.begin();
+  Wire.begin(I2C_SDA, I2C_SCL);
   if (!display.begin(SSD1306_SWITCHCAPVCC, 0x3C)) {
     Serial.println(F("OLED not found (try address 0x3D)"));
     while (true)

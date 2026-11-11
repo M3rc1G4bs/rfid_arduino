@@ -1,0 +1,236 @@
+[
+    {
+        "command": "C:\\Users\\Merci\\.platformio\\packages\\toolchain-atmelavr\\bin\\avr-g++.exe -o .pio\\build\\uno\\FrameworkArduino\\CDC.cpp.o -c -fno-exceptions -fno-threadsafe-statics -fpermissive -std=gnu++11 -mmcu=atmega328p -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60118 -DARDUINO_AVR_UNO -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 -IC:\\Users\\Merci\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino -IC:\\Users\\Merci\\.platformio\\packages\\framework-arduino-avr\\variants\\standard C:\\Users\\Merci\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino\\CDC.cpp",
+        "directory": "D:\\merci\\rfid_arduino",
+        "file": "C:\\Users\\Merci\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino\\CDC.cpp",
+        "output": ".pio\\build\\uno\\FrameworkArduino\\CDC.cpp.o"
+    },
+    {
+        "command": "C:\\Users\\Merci\\.platformio\\packages\\toolchain-atmelavr\\bin\\avr-g++.exe -o .pio\\build\\uno\\FrameworkArduino\\HardwareSerial.cpp.o -c -fno-exceptions -fno-threadsafe-statics -fpermissive -std=gnu++11 -mmcu=atmega328p -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60118 -DARDUINO_AVR_UNO -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 -IC:\\Users\\Merci\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino -IC:\\Users\\Merci\\.platformio\\packages\\framework-arduino-avr\\variants\\standard C:\\Users\\Merci\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino\\HardwareSerial.cpp",
+        "directory": "D:\\merci\\rfid_arduino",
+        "file": "C:\\Users\\Merci\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino\\HardwareSerial.cpp",
+        "output": ".pio\\build\\uno\\FrameworkArduino\\HardwareSerial.cpp.o"
+    },
+    {
+        "command": "C:\\Users\\Merci\\.platformio\\packages\\toolchain-atmelavr\\bin\\avr-g++.exe -o .pio\\build\\uno\\FrameworkArduino\\HardwareSerial0.cpp.o -c -fno-exceptions -fno-threadsafe-statics -fpermissive -std=gnu++11 -mmcu=atmega328p -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60118 -DARDUINO_AVR_UNO -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 -IC:\\Users\\Merci\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino -IC:\\Users\\Merci\\.platformio\\packages\\framework-arduino-avr\\variants\\standard C:\\Users\\Merci\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino\\HardwareSerial0.cpp",
+        "directory": "D:\\merci\\rfid_arduino",
+        "file": "C:\\Users\\Merci\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino\\HardwareSerial0.cpp",
+        "output": ".pio\\build\\uno\\FrameworkArduino\\HardwareSerial0.cpp.o"
+    },
+    {
+        "command": "C:\\Users\\Merci\\.platformio\\packages\\toolchain-atmelavr\\bin\\avr-g++.exe -o .pio\\build\\uno\\FrameworkArduino\\HardwareSerial1.cpp.o -c -fno-exceptions -fno-threadsafe-statics -fpermissive -std=gnu++11 -mmcu=atmega328p -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60118 -DARDUINO_AVR_UNO -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 -IC:\\Users\\Merci\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino -IC:\\Users\\Merci\\.platformio\\packages\\framework-arduino-avr\\variants\\standard C:\\Users\\Merci\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino\\HardwareSerial1.cpp",
+        "directory": "D:\\merci\\rfid_arduino",
+        "file": "C:\\Users\\Merci\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino\\HardwareSerial1.cpp",
+        "output": ".pio\\build\\uno\\FrameworkArduino\\HardwareSerial1.cpp.o"
+    },
+    {
+        "command": "C:\\Users\\Merci\\.platformio\\packages\\toolchain-atmelavr\\bin\\avr-g++.exe -o .pio\\build\\uno\\FrameworkArduino\\HardwareSerial2.cpp.o -c -fno-exceptions -fno-threadsafe-statics -fpermissive -std=gnu++11 -mmcu=atmega328p -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60118 -DARDUINO_AVR_UNO -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 -IC:\\Users\\Merci\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino -IC:\\Users\\Merci\\.platformio\\packages\\framework-arduino-avr\\variants\\standard C:\\Users\\Merci\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino\\HardwareSerial2.cpp",
+        "directory": "D:\\merci\\rfid_arduino",
+        "file": "C:\\Users\\Merci\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino\\HardwareSerial2.cpp",
+        "output": ".pio\\build\\uno\\FrameworkArduino\\HardwareSerial2.cpp.o"
+    },
+    {
+        "command": "C:\\Users\\Merci\\.platformio\\packages\\toolchain-atmelavr\\bin\\avr-g++.exe -o .pio\\build\\uno\\FrameworkArduino\\HardwareSerial3.cpp.o -c -fno-exceptions -fno-threadsafe-statics -fpermissive -std=gnu++11 -mmcu=atmega328p -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60118 -DARDUINO_AVR_UNO -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 -IC:\\Users\\Merci\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino -IC:\\Users\\Merci\\.platformio\\packages\\framework-arduino-avr\\variants\\standard C:\\Users\\Merci\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino\\HardwareSerial3.cpp",
+        "directory": "D:\\merci\\rfid_arduino",
+        "file": "C:\\Users\\Merci\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino\\HardwareSerial3.cpp",
+        "output": ".pio\\build\\uno\\FrameworkArduino\\HardwareSerial3.cpp.o"
+    },
+    {
+        "command": "C:\\Users\\Merci\\.platformio\\packages\\toolchain-atmelavr\\bin\\avr-g++.exe -o .pio\\build\\uno\\FrameworkArduino\\IPAddress.cpp.o -c -fno-exceptions -fno-threadsafe-statics -fpermissive -std=gnu++11 -mmcu=atmega328p -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60118 -DARDUINO_AVR_UNO -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 -IC:\\Users\\Merci\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino -IC:\\Users\\Merci\\.platformio\\packages\\framework-arduino-avr\\variants\\standard C:\\Users\\Merci\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino\\IPAddress.cpp",
+        "directory": "D:\\merci\\rfid_arduino",
+        "file": "C:\\Users\\Merci\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino\\IPAddress.cpp",
+        "output": ".pio\\build\\uno\\FrameworkArduino\\IPAddress.cpp.o"
+    },
+    {
+        "command": "C:\\Users\\Merci\\.platformio\\packages\\toolchain-atmelavr\\bin\\avr-g++.exe -o .pio\\build\\uno\\FrameworkArduino\\PluggableUSB.cpp.o -c -fno-exceptions -fno-threadsafe-statics -fpermissive -std=gnu++11 -mmcu=atmega328p -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60118 -DARDUINO_AVR_UNO -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 -IC:\\Users\\Merci\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino -IC:\\Users\\Merci\\.platformio\\packages\\framework-arduino-avr\\variants\\standard C:\\Users\\Merci\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino\\PluggableUSB.cpp",
+        "directory": "D:\\merci\\rfid_arduino",
+        "file": "C:\\Users\\Merci\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino\\PluggableUSB.cpp",
+        "output": ".pio\\build\\uno\\FrameworkArduino\\PluggableUSB.cpp.o"
+    },
+    {
+        "command": "C:\\Users\\Merci\\.platformio\\packages\\toolchain-atmelavr\\bin\\avr-g++.exe -o .pio\\build\\uno\\FrameworkArduino\\Print.cpp.o -c -fno-exceptions -fno-threadsafe-statics -fpermissive -std=gnu++11 -mmcu=atmega328p -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60118 -DARDUINO_AVR_UNO -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 -IC:\\Users\\Merci\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino -IC:\\Users\\Merci\\.platformio\\packages\\framework-arduino-avr\\variants\\standard C:\\Users\\Merci\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino\\Print.cpp",
+        "directory": "D:\\merci\\rfid_arduino",
+        "file": "C:\\Users\\Merci\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino\\Print.cpp",
+        "output": ".pio\\build\\uno\\FrameworkArduino\\Print.cpp.o"
+    },
+    {
+        "command": "C:\\Users\\Merci\\.platformio\\packages\\toolchain-atmelavr\\bin\\avr-g++.exe -o .pio\\build\\uno\\FrameworkArduino\\Stream.cpp.o -c -fno-exceptions -fno-threadsafe-statics -fpermissive -std=gnu++11 -mmcu=atmega328p -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60118 -DARDUINO_AVR_UNO -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 -IC:\\Users\\Merci\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino -IC:\\Users\\Merci\\.platformio\\packages\\framework-arduino-avr\\variants\\standard C:\\Users\\Merci\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino\\Stream.cpp",
+        "directory": "D:\\merci\\rfid_arduino",
+        "file": "C:\\Users\\Merci\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino\\Stream.cpp",
+        "output": ".pio\\build\\uno\\FrameworkArduino\\Stream.cpp.o"
+    },
+    {
+        "command": "C:\\Users\\Merci\\.platformio\\packages\\toolchain-atmelavr\\bin\\avr-g++.exe -o .pio\\build\\uno\\FrameworkArduino\\Tone.cpp.o -c -fno-exceptions -fno-threadsafe-statics -fpermissive -std=gnu++11 -mmcu=atmega328p -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60118 -DARDUINO_AVR_UNO -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 -IC:\\Users\\Merci\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino -IC:\\Users\\Merci\\.platformio\\packages\\framework-arduino-avr\\variants\\standard C:\\Users\\Merci\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino\\Tone.cpp",
+        "directory": "D:\\merci\\rfid_arduino",
+        "file": "C:\\Users\\Merci\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino\\Tone.cpp",
+        "output": ".pio\\build\\uno\\FrameworkArduino\\Tone.cpp.o"
+    },
+    {
+        "command": "C:\\Users\\Merci\\.platformio\\packages\\toolchain-atmelavr\\bin\\avr-g++.exe -o .pio\\build\\uno\\FrameworkArduino\\USBCore.cpp.o -c -fno-exceptions -fno-threadsafe-statics -fpermissive -std=gnu++11 -mmcu=atmega328p -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60118 -DARDUINO_AVR_UNO -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 -IC:\\Users\\Merci\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino -IC:\\Users\\Merci\\.platformio\\packages\\framework-arduino-avr\\variants\\standard C:\\Users\\Merci\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino\\USBCore.cpp",
+        "directory": "D:\\merci\\rfid_arduino",
+        "file": "C:\\Users\\Merci\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino\\USBCore.cpp",
+        "output": ".pio\\build\\uno\\FrameworkArduino\\USBCore.cpp.o"
+    },
+    {
+        "command": "C:\\Users\\Merci\\.platformio\\packages\\toolchain-atmelavr\\bin\\avr-gcc.exe -o .pio\\build\\uno\\FrameworkArduino\\WInterrupts.c.o -c -std=gnu11 -fno-fat-lto-objects -mmcu=atmega328p -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60118 -DARDUINO_AVR_UNO -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 -IC:\\Users\\Merci\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino -IC:\\Users\\Merci\\.platformio\\packages\\framework-arduino-avr\\variants\\standard C:\\Users\\Merci\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino\\WInterrupts.c",
+        "directory": "D:\\merci\\rfid_arduino",
+        "file": "C:\\Users\\Merci\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino\\WInterrupts.c",
+        "output": ".pio\\build\\uno\\FrameworkArduino\\WInterrupts.c.o"
+    },
+    {
+        "command": "C:\\Users\\Merci\\.platformio\\packages\\toolchain-atmelavr\\bin\\avr-g++.exe -o .pio\\build\\uno\\FrameworkArduino\\WMath.cpp.o -c -fno-exceptions -fno-threadsafe-statics -fpermissive -std=gnu++11 -mmcu=atmega328p -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60118 -DARDUINO_AVR_UNO -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 -IC:\\Users\\Merci\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino -IC:\\Users\\Merci\\.platformio\\packages\\framework-arduino-avr\\variants\\standard C:\\Users\\Merci\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino\\WMath.cpp",
+        "directory": "D:\\merci\\rfid_arduino",
+        "file": "C:\\Users\\Merci\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino\\WMath.cpp",
+        "output": ".pio\\build\\uno\\FrameworkArduino\\WMath.cpp.o"
+    },
+    {
+        "command": "C:\\Users\\Merci\\.platformio\\packages\\toolchain-atmelavr\\bin\\avr-g++.exe -o .pio\\build\\uno\\FrameworkArduino\\WString.cpp.o -c -fno-exceptions -fno-threadsafe-statics -fpermissive -std=gnu++11 -mmcu=atmega328p -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60118 -DARDUINO_AVR_UNO -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 -IC:\\Users\\Merci\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino -IC:\\Users\\Merci\\.platformio\\packages\\framework-arduino-avr\\variants\\standard C:\\Users\\Merci\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino\\WString.cpp",
+        "directory": "D:\\merci\\rfid_arduino",
+        "file": "C:\\Users\\Merci\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino\\WString.cpp",
+        "output": ".pio\\build\\uno\\FrameworkArduino\\WString.cpp.o"
+    },
+    {
+        "command": "C:\\Users\\Merci\\.platformio\\packages\\toolchain-atmelavr\\bin\\avr-g++.exe -o .pio\\build\\uno\\FrameworkArduino\\abi.cpp.o -c -fno-exceptions -fno-threadsafe-statics -fpermissive -std=gnu++11 -mmcu=atmega328p -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60118 -DARDUINO_AVR_UNO -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 -IC:\\Users\\Merci\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino -IC:\\Users\\Merci\\.platformio\\packages\\framework-arduino-avr\\variants\\standard C:\\Users\\Merci\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino\\abi.cpp",
+        "directory": "D:\\merci\\rfid_arduino",
+        "file": "C:\\Users\\Merci\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino\\abi.cpp",
+        "output": ".pio\\build\\uno\\FrameworkArduino\\abi.cpp.o"
+    },
+    {
+        "command": "C:\\Users\\Merci\\.platformio\\packages\\toolchain-atmelavr\\bin\\avr-gcc.exe -o .pio\\build\\uno\\FrameworkArduino\\hooks.c.o -c -std=gnu11 -fno-fat-lto-objects -mmcu=atmega328p -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60118 -DARDUINO_AVR_UNO -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 -IC:\\Users\\Merci\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino -IC:\\Users\\Merci\\.platformio\\packages\\framework-arduino-avr\\variants\\standard C:\\Users\\Merci\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino\\hooks.c",
+        "directory": "D:\\merci\\rfid_arduino",
+        "file": "C:\\Users\\Merci\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino\\hooks.c",
+        "output": ".pio\\build\\uno\\FrameworkArduino\\hooks.c.o"
+    },
+    {
+        "command": "C:\\Users\\Merci\\.platformio\\packages\\toolchain-atmelavr\\bin\\avr-g++.exe -o .pio\\build\\uno\\FrameworkArduino\\main.cpp.o -c -fno-exceptions -fno-threadsafe-statics -fpermissive -std=gnu++11 -mmcu=atmega328p -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60118 -DARDUINO_AVR_UNO -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 -IC:\\Users\\Merci\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino -IC:\\Users\\Merci\\.platformio\\packages\\framework-arduino-avr\\variants\\standard C:\\Users\\Merci\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino\\main.cpp",
+        "directory": "D:\\merci\\rfid_arduino",
+        "file": "C:\\Users\\Merci\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino\\main.cpp",
+        "output": ".pio\\build\\uno\\FrameworkArduino\\main.cpp.o"
+    },
+    {
+        "command": "C:\\Users\\Merci\\.platformio\\packages\\toolchain-atmelavr\\bin\\avr-g++.exe -o .pio\\build\\uno\\FrameworkArduino\\new.cpp.o -c -fno-exceptions -fno-threadsafe-statics -fpermissive -std=gnu++11 -mmcu=atmega328p -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60118 -DARDUINO_AVR_UNO -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 -IC:\\Users\\Merci\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino -IC:\\Users\\Merci\\.platformio\\packages\\framework-arduino-avr\\variants\\standard C:\\Users\\Merci\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino\\new.cpp",
+        "directory": "D:\\merci\\rfid_arduino",
+        "file": "C:\\Users\\Merci\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino\\new.cpp",
+        "output": ".pio\\build\\uno\\FrameworkArduino\\new.cpp.o"
+    },
+    {
+        "command": "C:\\Users\\Merci\\.platformio\\packages\\toolchain-atmelavr\\bin\\avr-gcc.exe -o .pio\\build\\uno\\FrameworkArduino\\wiring.c.o -c -std=gnu11 -fno-fat-lto-objects -mmcu=atmega328p -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60118 -DARDUINO_AVR_UNO -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 -IC:\\Users\\Merci\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino -IC:\\Users\\Merci\\.platformio\\packages\\framework-arduino-avr\\variants\\standard C:\\Users\\Merci\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino\\wiring.c",
+        "directory": "D:\\merci\\rfid_arduino",
+        "file": "C:\\Users\\Merci\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino\\wiring.c",
+        "output": ".pio\\build\\uno\\FrameworkArduino\\wiring.c.o"
+    },
+    {
+        "command": "C:\\Users\\Merci\\.platformio\\packages\\toolchain-atmelavr\\bin\\avr-gcc.exe -o .pio\\build\\uno\\FrameworkArduino\\wiring_analog.c.o -c -std=gnu11 -fno-fat-lto-objects -mmcu=atmega328p -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60118 -DARDUINO_AVR_UNO -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 -IC:\\Users\\Merci\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino -IC:\\Users\\Merci\\.platformio\\packages\\framework-arduino-avr\\variants\\standard C:\\Users\\Merci\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino\\wiring_analog.c",
+        "directory": "D:\\merci\\rfid_arduino",
+        "file": "C:\\Users\\Merci\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino\\wiring_analog.c",
+        "output": ".pio\\build\\uno\\FrameworkArduino\\wiring_analog.c.o"
+    },
+    {
+        "command": "C:\\Users\\Merci\\.platformio\\packages\\toolchain-atmelavr\\bin\\avr-gcc.exe -o .pio\\build\\uno\\FrameworkArduino\\wiring_digital.c.o -c -std=gnu11 -fno-fat-lto-objects -mmcu=atmega328p -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60118 -DARDUINO_AVR_UNO -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 -IC:\\Users\\Merci\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino -IC:\\Users\\Merci\\.platformio\\packages\\framework-arduino-avr\\variants\\standard C:\\Users\\Merci\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino\\wiring_digital.c",
+        "directory": "D:\\merci\\rfid_arduino",
+        "file": "C:\\Users\\Merci\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino\\wiring_digital.c",
+        "output": ".pio\\build\\uno\\FrameworkArduino\\wiring_digital.c.o"
+    },
+    {
+        "command": "C:\\Users\\Merci\\.platformio\\packages\\toolchain-atmelavr\\bin\\avr-gcc.exe -mmcu=atmega328p -x assembler-with-cpp -DPLATFORMIO=60118 -DARDUINO_AVR_UNO -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 -IC:\\Users\\Merci\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino -IC:\\Users\\Merci\\.platformio\\packages\\framework-arduino-avr\\variants\\standard -c -o .pio\\build\\uno\\FrameworkArduino\\wiring_pulse.S.o C:\\Users\\Merci\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino\\wiring_pulse.S",
+        "directory": "D:\\merci\\rfid_arduino",
+        "file": "C:\\Users\\Merci\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino\\wiring_pulse.S",
+        "output": ".pio\\build\\uno\\FrameworkArduino\\wiring_pulse.S.o"
+    },
+    {
+        "command": "C:\\Users\\Merci\\.platformio\\packages\\toolchain-atmelavr\\bin\\avr-gcc.exe -o .pio\\build\\uno\\FrameworkArduino\\wiring_pulse.c.o -c -std=gnu11 -fno-fat-lto-objects -mmcu=atmega328p -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60118 -DARDUINO_AVR_UNO -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 -IC:\\Users\\Merci\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino -IC:\\Users\\Merci\\.platformio\\packages\\framework-arduino-avr\\variants\\standard C:\\Users\\Merci\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino\\wiring_pulse.c",
+        "directory": "D:\\merci\\rfid_arduino",
+        "file": "C:\\Users\\Merci\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino\\wiring_pulse.c",
+        "output": ".pio\\build\\uno\\FrameworkArduino\\wiring_pulse.c.o"
+    },
+    {
+        "command": "C:\\Users\\Merci\\.platformio\\packages\\toolchain-atmelavr\\bin\\avr-gcc.exe -o .pio\\build\\uno\\FrameworkArduino\\wiring_shift.c.o -c -std=gnu11 -fno-fat-lto-objects -mmcu=atmega328p -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60118 -DARDUINO_AVR_UNO -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 -IC:\\Users\\Merci\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino -IC:\\Users\\Merci\\.platformio\\packages\\framework-arduino-avr\\variants\\standard C:\\Users\\Merci\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino\\wiring_shift.c",
+        "directory": "D:\\merci\\rfid_arduino",
+        "file": "C:\\Users\\Merci\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino\\wiring_shift.c",
+        "output": ".pio\\build\\uno\\FrameworkArduino\\wiring_shift.c.o"
+    },
+    {
+        "command": "C:\\Users\\Merci\\.platformio\\packages\\toolchain-atmelavr\\bin\\avr-g++.exe -o .pio\\build\\uno\\lib45d\\Wire\\Wire.cpp.o -c -fno-exceptions -fno-threadsafe-statics -fpermissive -std=gnu++11 -mmcu=atmega328p -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60118 -DARDUINO_AVR_UNO -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 -IC:\\Users\\Merci\\.platformio\\packages\\framework-arduino-avr\\libraries\\Wire\\src -IC:\\Users\\Merci\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino -IC:\\Users\\Merci\\.platformio\\packages\\framework-arduino-avr\\variants\\standard C:\\Users\\Merci\\.platformio\\packages\\framework-arduino-avr\\libraries\\Wire\\src\\Wire.cpp",
+        "directory": "D:\\merci\\rfid_arduino",
+        "file": "C:\\Users\\Merci\\.platformio\\packages\\framework-arduino-avr\\libraries\\Wire\\src\\Wire.cpp",
+        "output": ".pio\\build\\uno\\lib45d\\Wire\\Wire.cpp.o"
+    },
+    {
+        "command": "C:\\Users\\Merci\\.platformio\\packages\\toolchain-atmelavr\\bin\\avr-gcc.exe -o .pio\\build\\uno\\lib45d\\Wire\\utility\\twi.c.o -c -std=gnu11 -fno-fat-lto-objects -mmcu=atmega328p -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60118 -DARDUINO_AVR_UNO -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 -IC:\\Users\\Merci\\.platformio\\packages\\framework-arduino-avr\\libraries\\Wire\\src -IC:\\Users\\Merci\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino -IC:\\Users\\Merci\\.platformio\\packages\\framework-arduino-avr\\variants\\standard C:\\Users\\Merci\\.platformio\\packages\\framework-arduino-avr\\libraries\\Wire\\src\\utility\\twi.c",
+        "directory": "D:\\merci\\rfid_arduino",
+        "file": "C:\\Users\\Merci\\.platformio\\packages\\framework-arduino-avr\\libraries\\Wire\\src\\utility\\twi.c",
+        "output": ".pio\\build\\uno\\lib45d\\Wire\\utility\\twi.c.o"
+    },
+    {
+        "command": "C:\\Users\\Merci\\.platformio\\packages\\toolchain-atmelavr\\bin\\avr-g++.exe -o .pio\\build\\uno\\lib658\\SPI\\SPI.cpp.o -c -fno-exceptions -fno-threadsafe-statics -fpermissive -std=gnu++11 -mmcu=atmega328p -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60118 -DARDUINO_AVR_UNO -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 -IC:\\Users\\Merci\\.platformio\\packages\\framework-arduino-avr\\libraries\\SPI\\src -IC:\\Users\\Merci\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino -IC:\\Users\\Merci\\.platformio\\packages\\framework-arduino-avr\\variants\\standard C:\\Users\\Merci\\.platformio\\packages\\framework-arduino-avr\\libraries\\SPI\\src\\SPI.cpp",
+        "directory": "D:\\merci\\rfid_arduino",
+        "file": "C:\\Users\\Merci\\.platformio\\packages\\framework-arduino-avr\\libraries\\SPI\\src\\SPI.cpp",
+        "output": ".pio\\build\\uno\\lib658\\SPI\\SPI.cpp.o"
+    },
+    {
+        "command": "C:\\Users\\Merci\\.platformio\\packages\\toolchain-atmelavr\\bin\\avr-g++.exe -o \".pio\\build\\uno\\lib4f7\\Adafruit BusIO\\Adafruit_BusIO_Register.cpp.o\" -c -fno-exceptions -fno-threadsafe-statics -fpermissive -std=gnu++11 -mmcu=atmega328p -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60118 -DARDUINO_AVR_UNO -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 \"-I.pio\\libdeps\\uno\\Adafruit BusIO\" -IC:\\Users\\Merci\\.platformio\\packages\\framework-arduino-avr\\libraries\\SPI\\src -IC:\\Users\\Merci\\.platformio\\packages\\framework-arduino-avr\\libraries\\Wire\\src -IC:\\Users\\Merci\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino -IC:\\Users\\Merci\\.platformio\\packages\\framework-arduino-avr\\variants\\standard \".pio\\libdeps\\uno\\Adafruit BusIO\\Adafruit_BusIO_Register.cpp\"",
+        "directory": "D:\\merci\\rfid_arduino",
+        "file": ".pio\\libdeps\\uno\\Adafruit BusIO\\Adafruit_BusIO_Register.cpp",
+        "output": ".pio\\build\\uno\\lib4f7\\Adafruit BusIO\\Adafruit_BusIO_Register.cpp.o"
+    },
+    {
+        "command": "C:\\Users\\Merci\\.platformio\\packages\\toolchain-atmelavr\\bin\\avr-g++.exe -o \".pio\\build\\uno\\lib4f7\\Adafruit BusIO\\Adafruit_GenericDevice.cpp.o\" -c -fno-exceptions -fno-threadsafe-statics -fpermissive -std=gnu++11 -mmcu=atmega328p -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60118 -DARDUINO_AVR_UNO -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 \"-I.pio\\libdeps\\uno\\Adafruit BusIO\" -IC:\\Users\\Merci\\.platformio\\packages\\framework-arduino-avr\\libraries\\SPI\\src -IC:\\Users\\Merci\\.platformio\\packages\\framework-arduino-avr\\libraries\\Wire\\src -IC:\\Users\\Merci\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino -IC:\\Users\\Merci\\.platformio\\packages\\framework-arduino-avr\\variants\\standard \".pio\\libdeps\\uno\\Adafruit BusIO\\Adafruit_GenericDevice.cpp\"",
+        "directory": "D:\\merci\\rfid_arduino",
+        "file": ".pio\\libdeps\\uno\\Adafruit BusIO\\Adafruit_GenericDevice.cpp",
+        "output": ".pio\\build\\uno\\lib4f7\\Adafruit BusIO\\Adafruit_GenericDevice.cpp.o"
+    },
+    {
+        "command": "C:\\Users\\Merci\\.platformio\\packages\\toolchain-atmelavr\\bin\\avr-g++.exe -o \".pio\\build\\uno\\lib4f7\\Adafruit BusIO\\Adafruit_I2CDevice.cpp.o\" -c -fno-exceptions -fno-threadsafe-statics -fpermissive -std=gnu++11 -mmcu=atmega328p -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60118 -DARDUINO_AVR_UNO -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 \"-I.pio\\libdeps\\uno\\Adafruit BusIO\" -IC:\\Users\\Merci\\.platformio\\packages\\framework-arduino-avr\\libraries\\SPI\\src -IC:\\Users\\Merci\\.platformio\\packages\\framework-arduino-avr\\libraries\\Wire\\src -IC:\\Users\\Merci\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino -IC:\\Users\\Merci\\.platformio\\packages\\framework-arduino-avr\\variants\\standard \".pio\\libdeps\\uno\\Adafruit BusIO\\Adafruit_I2CDevice.cpp\"",
+        "directory": "D:\\merci\\rfid_arduino",
+        "file": ".pio\\libdeps\\uno\\Adafruit BusIO\\Adafruit_I2CDevice.cpp",
+        "output": ".pio\\build\\uno\\lib4f7\\Adafruit BusIO\\Adafruit_I2CDevice.cpp.o"
+    },
+    {
+        "command": "C:\\Users\\Merci\\.platformio\\packages\\toolchain-atmelavr\\bin\\avr-g++.exe -o \".pio\\build\\uno\\lib4f7\\Adafruit BusIO\\Adafruit_SPIDevice.cpp.o\" -c -fno-exceptions -fno-threadsafe-statics -fpermissive -std=gnu++11 -mmcu=atmega328p -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60118 -DARDUINO_AVR_UNO -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 \"-I.pio\\libdeps\\uno\\Adafruit BusIO\" -IC:\\Users\\Merci\\.platformio\\packages\\framework-arduino-avr\\libraries\\SPI\\src -IC:\\Users\\Merci\\.platformio\\packages\\framework-arduino-avr\\libraries\\Wire\\src -IC:\\Users\\Merci\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino -IC:\\Users\\Merci\\.platformio\\packages\\framework-arduino-avr\\variants\\standard \".pio\\libdeps\\uno\\Adafruit BusIO\\Adafruit_SPIDevice.cpp\"",
+        "directory": "D:\\merci\\rfid_arduino",
+        "file": ".pio\\libdeps\\uno\\Adafruit BusIO\\Adafruit_SPIDevice.cpp",
+        "output": ".pio\\build\\uno\\lib4f7\\Adafruit BusIO\\Adafruit_SPIDevice.cpp.o"
+    },
+    {
+        "command": "C:\\Users\\Merci\\.platformio\\packages\\toolchain-atmelavr\\bin\\avr-g++.exe -o \".pio\\build\\uno\\lib0de\\Adafruit PN532\\Adafruit_PN532.cpp.o\" -c -fno-exceptions -fno-threadsafe-statics -fpermissive -std=gnu++11 -mmcu=atmega328p -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60118 -DARDUINO_AVR_UNO -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 \"-I.pio\\libdeps\\uno\\Adafruit PN532\" \"-I.pio\\libdeps\\uno\\Adafruit BusIO\" -IC:\\Users\\Merci\\.platformio\\packages\\framework-arduino-avr\\libraries\\SPI\\src -IC:\\Users\\Merci\\.platformio\\packages\\framework-arduino-avr\\libraries\\Wire\\src -IC:\\Users\\Merci\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino -IC:\\Users\\Merci\\.platformio\\packages\\framework-arduino-avr\\variants\\standard \".pio\\libdeps\\uno\\Adafruit PN532\\Adafruit_PN532.cpp\"",
+        "directory": "D:\\merci\\rfid_arduino",
+        "file": ".pio\\libdeps\\uno\\Adafruit PN532\\Adafruit_PN532.cpp",
+        "output": ".pio\\build\\uno\\lib0de\\Adafruit PN532\\Adafruit_PN532.cpp.o"
+    },
+    {
+        "command": "C:\\Users\\Merci\\.platformio\\packages\\toolchain-atmelavr\\bin\\avr-g++.exe -o \".pio\\build\\uno\\libdcb\\Adafruit GFX Library\\Adafruit_GFX.cpp.o\" -c -fno-exceptions -fno-threadsafe-statics -fpermissive -std=gnu++11 -mmcu=atmega328p -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60118 -DARDUINO_AVR_UNO -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 \"-I.pio\\libdeps\\uno\\Adafruit GFX Library\" \"-I.pio\\libdeps\\uno\\Adafruit BusIO\" -IC:\\Users\\Merci\\.platformio\\packages\\framework-arduino-avr\\libraries\\SPI\\src -IC:\\Users\\Merci\\.platformio\\packages\\framework-arduino-avr\\libraries\\Wire\\src -IC:\\Users\\Merci\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino -IC:\\Users\\Merci\\.platformio\\packages\\framework-arduino-avr\\variants\\standard \".pio\\libdeps\\uno\\Adafruit GFX Library\\Adafruit_GFX.cpp\"",
+        "directory": "D:\\merci\\rfid_arduino",
+        "file": ".pio\\libdeps\\uno\\Adafruit GFX Library\\Adafruit_GFX.cpp",
+        "output": ".pio\\build\\uno\\libdcb\\Adafruit GFX Library\\Adafruit_GFX.cpp.o"
+    },
+    {
+        "command": "C:\\Users\\Merci\\.platformio\\packages\\toolchain-atmelavr\\bin\\avr-g++.exe -o \".pio\\build\\uno\\libdcb\\Adafruit GFX Library\\Adafruit_GrayOLED.cpp.o\" -c -fno-exceptions -fno-threadsafe-statics -fpermissive -std=gnu++11 -mmcu=atmega328p -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60118 -DARDUINO_AVR_UNO -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 \"-I.pio\\libdeps\\uno\\Adafruit GFX Library\" \"-I.pio\\libdeps\\uno\\Adafruit BusIO\" -IC:\\Users\\Merci\\.platformio\\packages\\framework-arduino-avr\\libraries\\SPI\\src -IC:\\Users\\Merci\\.platformio\\packages\\framework-arduino-avr\\libraries\\Wire\\src -IC:\\Users\\Merci\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino -IC:\\Users\\Merci\\.platformio\\packages\\framework-arduino-avr\\variants\\standard \".pio\\libdeps\\uno\\Adafruit GFX Library\\Adafruit_GrayOLED.cpp\"",
+        "directory": "D:\\merci\\rfid_arduino",
+        "file": ".pio\\libdeps\\uno\\Adafruit GFX Library\\Adafruit_GrayOLED.cpp",
+        "output": ".pio\\build\\uno\\libdcb\\Adafruit GFX Library\\Adafruit_GrayOLED.cpp.o"
+    },
+    {
+        "command": "C:\\Users\\Merci\\.platformio\\packages\\toolchain-atmelavr\\bin\\avr-g++.exe -o \".pio\\build\\uno\\libdcb\\Adafruit GFX Library\\Adafruit_SPITFT.cpp.o\" -c -fno-exceptions -fno-threadsafe-statics -fpermissive -std=gnu++11 -mmcu=atmega328p -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60118 -DARDUINO_AVR_UNO -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 \"-I.pio\\libdeps\\uno\\Adafruit GFX Library\" \"-I.pio\\libdeps\\uno\\Adafruit BusIO\" -IC:\\Users\\Merci\\.platformio\\packages\\framework-arduino-avr\\libraries\\SPI\\src -IC:\\Users\\Merci\\.platformio\\packages\\framework-arduino-avr\\libraries\\Wire\\src -IC:\\Users\\Merci\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino -IC:\\Users\\Merci\\.platformio\\packages\\framework-arduino-avr\\variants\\standard \".pio\\libdeps\\uno\\Adafruit GFX Library\\Adafruit_SPITFT.cpp\"",
+        "directory": "D:\\merci\\rfid_arduino",
+        "file": ".pio\\libdeps\\uno\\Adafruit GFX Library\\Adafruit_SPITFT.cpp",
+        "output": ".pio\\build\\uno\\libdcb\\Adafruit GFX Library\\Adafruit_SPITFT.cpp.o"
+    },
+    {
+        "command": "C:\\Users\\Merci\\.platformio\\packages\\toolchain-atmelavr\\bin\\avr-gcc.exe -o \".pio\\build\\uno\\libdcb\\Adafruit GFX Library\\glcdfont.c.o\" -c -std=gnu11 -fno-fat-lto-objects -mmcu=atmega328p -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60118 -DARDUINO_AVR_UNO -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 \"-I.pio\\libdeps\\uno\\Adafruit GFX Library\" \"-I.pio\\libdeps\\uno\\Adafruit BusIO\" -IC:\\Users\\Merci\\.platformio\\packages\\framework-arduino-avr\\libraries\\SPI\\src -IC:\\Users\\Merci\\.platformio\\packages\\framework-arduino-avr\\libraries\\Wire\\src -IC:\\Users\\Merci\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino -IC:\\Users\\Merci\\.platformio\\packages\\framework-arduino-avr\\variants\\standard \".pio\\libdeps\\uno\\Adafruit GFX Library\\glcdfont.c\"",
+        "directory": "D:\\merci\\rfid_arduino",
+        "file": ".pio\\libdeps\\uno\\Adafruit GFX Library\\glcdfont.c",
+        "output": ".pio\\build\\uno\\libdcb\\Adafruit GFX Library\\glcdfont.c.o"
+    },
+    {
+        "command": "C:\\Users\\Merci\\.platformio\\packages\\toolchain-atmelavr\\bin\\avr-g++.exe -o \".pio\\build\\uno\\liba10\\Adafruit SSD1306\\Adafruit_SSD1306.cpp.o\" -c -fno-exceptions -fno-threadsafe-statics -fpermissive -std=gnu++11 -mmcu=atmega328p -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60118 -DARDUINO_AVR_UNO -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 \"-I.pio\\libdeps\\uno\\Adafruit SSD1306\" \"-I.pio\\libdeps\\uno\\Adafruit GFX Library\" \"-I.pio\\libdeps\\uno\\Adafruit BusIO\" -IC:\\Users\\Merci\\.platformio\\packages\\framework-arduino-avr\\libraries\\SPI\\src -IC:\\Users\\Merci\\.platformio\\packages\\framework-arduino-avr\\libraries\\Wire\\src -IC:\\Users\\Merci\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino -IC:\\Users\\Merci\\.platformio\\packages\\framework-arduino-avr\\variants\\standard \".pio\\libdeps\\uno\\Adafruit SSD1306\\Adafruit_SSD1306.cpp\"",
+        "directory": "D:\\merci\\rfid_arduino",
+        "file": ".pio\\libdeps\\uno\\Adafruit SSD1306\\Adafruit_SSD1306.cpp",
+        "output": ".pio\\build\\uno\\liba10\\Adafruit SSD1306\\Adafruit_SSD1306.cpp.o"
+    },
+    {
+        "command": "C:\\Users\\Merci\\.platformio\\packages\\toolchain-atmelavr\\bin\\avr-g++.exe -o .pio\\build\\uno\\src\\main.cpp.o -c -fno-exceptions -fno-threadsafe-statics -fpermissive -std=gnu++11 -mmcu=atmega328p -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60118 -DARDUINO_AVR_UNO -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 -Isrc \"-I.pio\\libdeps\\uno\\Adafruit SSD1306\" \"-I.pio\\libdeps\\uno\\Adafruit GFX Library\" \"-I.pio\\libdeps\\uno\\Adafruit PN532\" \"-I.pio\\libdeps\\uno\\Adafruit BusIO\" -IC:\\Users\\Merci\\.platformio\\packages\\framework-arduino-avr\\libraries\\SPI\\src -IC:\\Users\\Merci\\.platformio\\packages\\framework-arduino-avr\\libraries\\Wire\\src -IC:\\Users\\Merci\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino -IC:\\Users\\Merci\\.platformio\\packages\\framework-arduino-avr\\variants\\standard src\\main.cpp",
+        "directory": "D:\\merci\\rfid_arduino",
+        "file": "src\\main.cpp",
+        "output": ".pio\\build\\uno\\src\\main.cpp.o"
+    }
+]
