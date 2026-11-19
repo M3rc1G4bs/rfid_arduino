@@ -1,30 +1,33 @@
-#include <Adafruit_GFX.h>
 #include <Adafruit_PN532.h>
-#include <Adafruit_SSD1306.h>
 #include <Arduino.h>
 #include <FS.h>
+#include <M5Cardputer.h>
 #include <SD.h>
 #include <SPI.h>
 #include <Wire.h>
 #include <vector>
 
-// --- PINOS I2C (OLED + PN532) ---
-#define I2C_SDA 21
-#define I2C_SCL 22
+// --- PINOS I2C (Porta Grove do M5Stack Cardputer: 5V, GND, G1, G2) ---
+#define PN532_SCL 1 // G1
+#define PN532_SDA 2 // G2
 
-// --- PINOS SPI (Módulo MicroSD) ---
-#define SD_CS   5
-#define SD_SCK  18
-#define SD_MISO 19
-#define SD_MOSI 23
+// --- PINOS SPI (Slot MicroSD nativo do M5Stack Cardputer) ---
+#define SD_SCK  40
+#define SD_MISO 39
+#define SD_MOSI 14
+#define SD_CS   12
 
-// --- PINOS DOS BOTÕES ---
-#define BTN_UP     32  // Anterior / Cima
-#define BTN_SELECT 33  // Selecionar / Menu / Confirmar
-#define BTN_DOWN   25  // Próximo / Baixo
+// Cores equivalentes ao OLED original no M5Canvas
+#define SSD1306_WHITE TFT_WHITE
+#define SSD1306_BLACK TFT_BLACK
 
 Adafruit_PN532 nfc(0, 0, &Wire); // I2C; sem fios extras de IRQ/RESET
-Adafruit_SSD1306 display(128, 64, &Wire, -1);
+M5Canvas display(&M5Cardputer.Display);
+
+void flushDisplay() {
+  // Escala o canvas 128x64 para preencher a tela 240x135 do Cardputer
+  display.pushRotateZoom(&M5Cardputer.Display, 120, 67, 0, 1.875f, 2.1f);
+}
 
 // Arquivo de persistência no SD
 const char *CARDS_FILE = "/cards.txt";
@@ -33,6 +36,8 @@ const char *CARDS_FILE = "/cards.txt";
 std::vector<String> authorizedCards;
 bool sdAvailable = false;
 uint8_t idleFrame = 0;
+unsigned long lastIdleAnimMs = 0;
+unsigned long lastNfcPollMs = 0;
 
 // Estados da Interface
 enum AppState {
@@ -44,16 +49,59 @@ enum AppState {
 };
 
 AppState currentState = STATE_IDLE;
-int8_t menuSelection = 0;      // 0: Adicionar, 1: Listar/Remover, 2: Sair
-int16_t cardListIndex = 0;     // Índice do cartão visualizado na lista
+int8_t menuSelection = 0;         // 0: Adicionar, 1: Listar/Remover, 2: Sair
+int16_t cardListIndex = 0;        // Índice do cartão visualizado na lista
 bool deleteConfirmChoice = false; // false: Cancelar, true: Confirmar
+
+struct InputEvents {
+  bool up = false;
+  bool down = false;
+  bool select = false;
+  bool back = false;
+};
+
+InputEvents readCardputerInput() {
+  InputEvents ev;
+  M5Cardputer.update();
+
+  if (M5Cardputer.BtnA.wasPressed()) {
+    ev.select = true;
+  }
+
+  if (M5Cardputer.Keyboard.isChange() && M5Cardputer.Keyboard.isPressed()) {
+    Keyboard_Class::KeysState status = M5Cardputer.Keyboard.keysState();
+
+    if (status.enter) {
+      ev.select = true;
+    }
+    if (status.del) {
+      ev.back = true;
+    }
+
+    for (char c : status.word) {
+      if (c == ';' || c == 'w' || c == 'W' || c == ',') {
+        ev.up = true;
+      } else if (c == '.' || c == 's' || c == 'S' || c == '/') {
+        ev.down = true;
+      } else if (c == ' ') {
+        ev.select = true;
+      } else if (c == '`') {
+        ev.back = true;
+      }
+    }
+  }
+
+  return ev;
+}
 
 // Conversão de UID binário para String HEX (ex: "49 5B BC 61")
 String uidToString(const uint8_t *uid, uint8_t length) {
   String str = "";
   for (uint8_t i = 0; i < length; ++i) {
-    if (i > 0) str += " ";
-    if (uid[i] < 0x10) str += "0";
+    if (i > 0)
+      str += " ";
+    if (uid[i] < 0x10)
+      str += "0";
     str += String(uid[i], HEX);
   }
   str.toUpperCase();
@@ -74,7 +122,8 @@ bool isUidAuthorized(const uint8_t *uid, uint8_t length) {
 // --- FUNÇÕES DE CARTÃO SD ---
 
 void saveCardsToSD() {
-  if (!sdAvailable) return;
+  if (!sdAvailable)
+    return;
   File file = SD.open(CARDS_FILE, FILE_WRITE);
   if (!file) {
     Serial.println(F("Erro ao abrir cards.txt para escrita no SD"));
@@ -84,7 +133,7 @@ void saveCardsToSD() {
     file.println(card);
   }
   file.close();
-  Serial.println(F("Lista de cartões atualizada no SD."));
+  Serial.println(F("Lista de cartoes atualizada no SD."));
 }
 
 void loadCardsFromSD() {
@@ -127,34 +176,6 @@ void loadCardsFromSD() {
   Serial.printf("Carregados %d cartoes do SD.\n", (int)authorizedCards.size());
 }
 
-// --- TRATAMENTO DOS BOTÕES (COM DEBOUNCE) ---
-
-struct Button {
-  uint8_t pin;
-  bool lastState;
-  unsigned long lastDebounceTime;
-};
-
-Button btnUp = {BTN_UP, HIGH, 0};
-Button btnSelect = {BTN_SELECT, HIGH, 0};
-Button btnDown = {BTN_DOWN, HIGH, 0};
-
-bool checkButtonPressed(Button &btn) {
-  bool reading = digitalRead(btn.pin);
-  bool pressed = false;
-
-  if (reading != btn.lastState) {
-    if ((millis() - btn.lastDebounceTime) > 40) {
-      if (btn.lastState == HIGH && reading == LOW) {
-        pressed = true;
-      }
-      btn.lastState = reading;
-      btn.lastDebounceTime = millis();
-    }
-  }
-  return pressed;
-}
-
 // --- FUNÇÕES AUXILIARES DE DESENHO FOFO ---
 
 void drawHeart(int16_t x, int16_t y) {
@@ -186,7 +207,7 @@ void drawPaw(int16_t x, int16_t y) {
 }
 
 void drawHeader(const char *title = nullptr) {
-  display.clearDisplay();
+  display.fillSprite(SSD1306_BLACK);
   display.drawFastHLine(14, 4, 100, SSD1306_WHITE);
   drawPaw(6, 4);
   drawPaw(121, 4);
@@ -288,7 +309,7 @@ void drawIdle(uint8_t frame) {
   // Texto inferior com status
   display.setCursor(22, 55);
   display.print(F("APROXIME TAG"));
-  display.display();
+  flushDisplay();
 }
 
 // --- 2. ANIMAÇÃO DE ACESSO PERMITIDO: PORTA VERTICAL + COELHINHO FELIZ ---
@@ -371,7 +392,7 @@ void drawVerticalDoorAndBunny(uint8_t openHeight, uint8_t animTick) {
     drawSparkle(111, 44, (animTick % 2 != 0));
   }
 
-  display.display();
+  flushDisplay();
 }
 
 void animateGranted() {
@@ -440,7 +461,7 @@ void drawDeniedBear(uint8_t frame) {
     display.drawLine(116, 24, 106, 34, SSD1306_WHITE);
   }
 
-  display.display();
+  flushDisplay();
 }
 
 void animateDenied() {
@@ -472,7 +493,7 @@ void drawMenu() {
       display.print(options[i]);
     }
   }
-  display.display();
+  flushDisplay();
 }
 
 void drawAddCardScreen() {
@@ -489,10 +510,10 @@ void drawAddCardScreen() {
   display.setCursor(20, 39);
   display.print(F("para cadastrar"));
 
-  display.setCursor(14, 51);
-  display.print(F("[Voltar: Btn Cima]"));
+  display.setCursor(16, 51);
+  display.print(F("[Voltar: DEL/Setas]"));
 
-  display.display();
+  flushDisplay();
 }
 
 void drawCardListScreen() {
@@ -503,8 +524,8 @@ void drawCardListScreen() {
     display.setTextColor(SSD1306_WHITE);
     display.print(F("Nenhum cartao!"));
     display.setCursor(15, 48);
-    display.print(F("[Sel para Voltar]"));
-    display.display();
+    display.print(F("[Enter p/ Voltar]"));
+    flushDisplay();
     return;
   }
 
@@ -515,25 +536,22 @@ void drawCardListScreen() {
     cardListIndex = 0;
   }
 
-  // Caixa da tag atual
   display.drawRoundRect(8, 18, 112, 42, 4, SSD1306_WHITE);
-  
+
   display.setTextColor(SSD1306_WHITE);
   display.setCursor(14, 22);
   display.printf("Tag %d de %d:", cardListIndex + 1, (int)authorizedCards.size());
 
-  // UID com destaque
   display.fillRoundRect(12, 32, 104, 13, 2, SSD1306_WHITE);
   display.setTextColor(SSD1306_BLACK);
   display.setCursor(16, 35);
   display.print(authorizedCards[cardListIndex]);
 
-  // Dica inferior
   display.setTextColor(SSD1306_WHITE);
   display.setCursor(10, 48);
-  display.print(F("SEL:Excluir ^v:Naveg"));
+  display.print(F("OK:Excl DEL:Volta"));
 
-  display.display();
+  flushDisplay();
 }
 
 void drawConfirmDeleteScreen() {
@@ -545,7 +563,6 @@ void drawConfirmDeleteScreen() {
   display.setCursor(14, 22);
   display.print(authorizedCards[cardListIndex]);
 
-  // Botão Cancelar
   if (!deleteConfirmChoice) {
     display.fillRoundRect(14, 38, 46, 14, 3, SSD1306_WHITE);
     display.setTextColor(SSD1306_BLACK);
@@ -558,7 +575,6 @@ void drawConfirmDeleteScreen() {
     display.print(F("  Nao"));
   }
 
-  // Botão Confirmar
   if (deleteConfirmChoice) {
     display.fillRoundRect(68, 38, 46, 14, 3, SSD1306_WHITE);
     display.setTextColor(SSD1306_BLACK);
@@ -571,7 +587,7 @@ void drawConfirmDeleteScreen() {
     display.print(F("  Sim"));
   }
 
-  display.display();
+  flushDisplay();
 }
 
 void showMessage(const char *msg1, const char *msg2, bool success = true) {
@@ -591,133 +607,140 @@ void showMessage(const char *msg1, const char *msg2, bool success = true) {
     display.setCursor(24, 38);
     display.print(msg2);
   }
-  display.display();
+  flushDisplay();
   delay(1200);
 }
 
 // --- SETUP ---
 
 void setup() {
+  auto cfg = M5.config();
+  M5Cardputer.begin(cfg, true); // Habilita teclado nativo do Cardputer
   Serial.begin(115200);
 
-  // Configuração dos botões com PULL-UP interno
-  pinMode(BTN_UP, INPUT_PULLUP);
-  pinMode(BTN_SELECT, INPUT_PULLUP);
-  pinMode(BTN_DOWN, INPUT_PULLUP);
-
-  Wire.begin(I2C_SDA, I2C_SCL);
-  if (!display.begin(SSD1306_SWITCHCAPVCC, 0x3C)) {
-    Serial.println(F("OLED nao encontrado (tente 0x3D)"));
-    while (true) delay(100);
-  }
+  M5Cardputer.Display.setRotation(0);
+  M5Cardputer.Display.fillScreen(TFT_BLACK);
+  display.createSprite(128, 64);
 
   drawHeader();
   display.setTextColor(SSD1306_WHITE);
   display.setTextSize(1);
-  display.setCursor(17, 24);
+  display.setCursor(14, 24);
   display.print(F("Iniciando Sistema..."));
-  display.display();
+  flushDisplay();
 
-  // Inicialização do Módulo SD com SPI (clock reduzido para maior estabilidade em protoboard)
+  // Inicialização do slot MicroSD nativo do Cardputer
   SPI.begin(SD_SCK, SD_MISO, SD_MOSI, SD_CS);
-  delay(100);
-  if (!SD.begin(SD_CS, SPI, 1000000)) {
-    Serial.println(F("Falha ao inicializar Cartao SD ou SD ausente."));
+  if (!SD.begin(SD_CS, SPI, 10000000)) {
+    Serial.println(F("Falha ao inicializar Cartao SD nativo ou SD ausente."));
     sdAvailable = false;
     display.setCursor(14, 40);
     display.print(F("SD: Nao Detectado"));
   } else {
     uint8_t cardType = SD.cardType();
     if (cardType == CARD_NONE) {
-      Serial.println(F("Modulo SD respondeu, mas nenhum cartao inserido."));
+      Serial.println(F("Nenhum cartao SD inserido no slot."));
       sdAvailable = false;
       display.setCursor(14, 40);
       display.print(F("SD: Sem Cartao"));
     } else {
-      Serial.printf("Cartao SD montado! Tipo: %d, Tamanho: %lluMB\n",
+      Serial.printf("SD Card montado! Tipo: %d, Tamanho: %lluMB\n",
                     cardType, SD.cardSize() / (1024 * 1024));
       sdAvailable = true;
       display.setCursor(14, 40);
       display.print(F("SD: Conectado!"));
     }
   }
-  display.display();
+  flushDisplay();
   delay(800);
 
   // Carrega lista de cartões do SD
   loadCardsFromSD();
 
-  // Inicializa o leitor PN532
+  // Inicializa barramento I2C na porta Grove (G2=SDA, G1=SCL) e leitor PN532
+  Wire.begin(PN532_SDA, PN532_SCL);
   nfc.begin();
   if (!nfc.getFirmwareVersion()) {
-    Serial.println(F("PN532 nao encontrado. Verifique pinagem e modo I2C."));
+    Serial.println(F("PN532 nao encontrado na porta Grove (G1/G2)."));
     drawHeader();
     display.setCursor(9, 29);
     display.print(F("PN532 nao achado"));
     display.setCursor(9, 41);
-    display.print(F("Verifique o I2C"));
-    display.display();
-    while (true) delay(100);
+    display.print(F("Check Grove G1/G2"));
+    flushDisplay();
+    while (true) {
+      M5Cardputer.update();
+      delay(100);
+    }
   }
   nfc.SAMConfig();
   drawIdle(0);
-  Serial.println(F("Sistema pronto!"));
+  lastIdleAnimMs = millis();
+  Serial.println(F("Cardputer RFID pronto!"));
 }
 
 // --- LOOP PRINCIPAL ---
 
 void loop() {
-  bool upPressed = checkButtonPressed(btnUp);
-  bool selPressed = checkButtonPressed(btnSelect);
-  bool downPressed = checkButtonPressed(btnDown);
+  InputEvents input = readCardputerInput();
 
-  // MÁQUINA DE ESTADOS DA INTERFACE
   switch (currentState) {
     case STATE_IDLE: {
-      // Se pressionar o botão Select/Menu, entra no modo de gerenciamento
-      if (selPressed) {
+      if (input.select) {
         currentState = STATE_MENU;
         menuSelection = 0;
         drawMenu();
         return;
       }
 
-      // Leitura não bloqueante (timeout rápido de 80ms)
-      uint8_t uid[10];
-      uint8_t uidLength = 0;
-      if (!nfc.readPassiveTargetID(PN532_MIFARE_ISO14443A, uid, &uidLength, 80)) {
+      unsigned long now = millis();
+      if (now - lastIdleAnimMs >= 160) {
+        lastIdleAnimMs = now;
         drawIdle(idleFrame++);
-        return;
       }
 
-      String cardHex = uidToString(uid, uidLength);
-      Serial.print(F("Tag aproximada: "));
-      Serial.println(cardHex);
+      // Polling NFC periódico para manter o teclado ultra responsivo
+      if (now - lastNfcPollMs >= 120) {
+        lastNfcPollMs = now;
+        uint8_t uid[10];
+        uint8_t uidLength = 0;
+        if (nfc.readPassiveTargetID(PN532_MIFARE_ISO14443A, uid, &uidLength, 50)) {
+          String cardHex = uidToString(uid, uidLength);
+          Serial.print(F("Tag aproximada: "));
+          Serial.println(cardHex);
 
-      if (isUidAuthorized(uid, uidLength)) {
-        animateGranted();
-      } else {
-        animateDenied();
-      }
+          if (isUidAuthorized(uid, uidLength)) {
+            animateGranted();
+          } else {
+            animateDenied();
+          }
 
-      // Aguarda o cartão se afastar
-      while (nfc.readPassiveTargetID(PN532_MIFARE_ISO14443A, uid, &uidLength, 80)) {
-        delay(50);
+          // Aguarda o cartão se afastar
+          while (nfc.readPassiveTargetID(PN532_MIFARE_ISO14443A, uid, &uidLength, 80)) {
+            M5Cardputer.update();
+            delay(50);
+          }
+          drawIdle(idleFrame++);
+        }
       }
-      drawIdle(idleFrame++);
       break;
     }
 
     case STATE_MENU: {
-      if (upPressed) {
+      if (input.up) {
         menuSelection--;
-        if (menuSelection < 0) menuSelection = 2;
+        if (menuSelection < 0)
+          menuSelection = 2;
         drawMenu();
-      } else if (downPressed) {
+      } else if (input.down) {
         menuSelection++;
-        if (menuSelection > 2) menuSelection = 0;
+        if (menuSelection > 2)
+          menuSelection = 0;
         drawMenu();
-      } else if (selPressed) {
+      } else if (input.back) {
+        currentState = STATE_IDLE;
+        drawIdle(idleFrame);
+      } else if (input.select) {
         if (menuSelection == 0) {
           currentState = STATE_ADD_CARD;
           drawAddCardScreen();
@@ -734,17 +757,15 @@ void loop() {
     }
 
     case STATE_ADD_CARD: {
-      // Botão UP ou DOWN permite cancelar e voltar ao menu
-      if (upPressed || downPressed) {
+      if (input.up || input.down || input.back) {
         currentState = STATE_MENU;
         drawMenu();
         return;
       }
 
-      // Tenta ler uma tag para cadastrar
       uint8_t uid[10];
       uint8_t uidLength = 0;
-      if (nfc.readPassiveTargetID(PN532_MIFARE_ISO14443A, uid, &uidLength, 150)) {
+      if (nfc.readPassiveTargetID(PN532_MIFARE_ISO14443A, uid, &uidLength, 60)) {
         String newUid = uidToString(uid, uidLength);
         Serial.print(F("Tentando cadastrar tag: "));
         Serial.println(newUid);
@@ -757,8 +778,8 @@ void loop() {
           showMessage("Tag Salva no SD!", newUid.c_str(), true);
         }
 
-        // Aguarda retirar o cartão
-        while (nfc.readPassiveTargetID(PN532_MIFARE_ISO14443A, uid, &uidLength, 100)) {
+        while (nfc.readPassiveTargetID(PN532_MIFARE_ISO14443A, uid, &uidLength, 80)) {
+          M5Cardputer.update();
           delay(50);
         }
 
@@ -770,24 +791,27 @@ void loop() {
 
     case STATE_LIST_CARDS: {
       if (authorizedCards.empty()) {
-        if (selPressed || upPressed || downPressed) {
+        if (input.select || input.up || input.down || input.back) {
           currentState = STATE_MENU;
           drawMenu();
         }
         return;
       }
 
-      if (upPressed) {
+      if (input.up) {
         if (cardListIndex > 0) {
           cardListIndex--;
           drawCardListScreen();
         }
-      } else if (downPressed) {
+      } else if (input.down) {
         if (cardListIndex < (int16_t)authorizedCards.size() - 1) {
           cardListIndex++;
           drawCardListScreen();
         }
-      } else if (selPressed) {
+      } else if (input.back) {
+        currentState = STATE_MENU;
+        drawMenu();
+      } else if (input.select) {
         currentState = STATE_CONFIRM_DELETE;
         deleteConfirmChoice = false; // Inicia em "Não" por segurança
         drawConfirmDeleteScreen();
@@ -796,12 +820,14 @@ void loop() {
     }
 
     case STATE_CONFIRM_DELETE: {
-      if (upPressed || downPressed) {
+      if (input.up || input.down) {
         deleteConfirmChoice = !deleteConfirmChoice;
         drawConfirmDeleteScreen();
-      } else if (selPressed) {
+      } else if (input.back) {
+        currentState = STATE_LIST_CARDS;
+        drawCardListScreen();
+      } else if (input.select) {
         if (deleteConfirmChoice) {
-          // Confirmado exclusão
           String removedUid = authorizedCards[cardListIndex];
           authorizedCards.erase(authorizedCards.begin() + cardListIndex);
           saveCardsToSD();
@@ -812,7 +838,6 @@ void loop() {
           currentState = STATE_LIST_CARDS;
           drawCardListScreen();
         } else {
-          // Cancelado
           currentState = STATE_LIST_CARDS;
           drawCardListScreen();
         }
@@ -820,4 +845,6 @@ void loop() {
       break;
     }
   }
+
+  delay(5);
 }
