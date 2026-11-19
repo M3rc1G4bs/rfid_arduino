@@ -618,18 +618,28 @@ void setup() {
   display.print(F("Iniciando Sistema..."));
   display.display();
 
-  // Inicialização do Módulo SD com SPI
+  // Inicialização do Módulo SD com SPI (clock reduzido para maior estabilidade em protoboard)
   SPI.begin(SD_SCK, SD_MISO, SD_MOSI, SD_CS);
-  if (!SD.begin(SD_CS)) {
+  delay(100);
+  if (!SD.begin(SD_CS, SPI, 1000000)) {
     Serial.println(F("Falha ao inicializar Cartao SD ou SD ausente."));
     sdAvailable = false;
     display.setCursor(14, 40);
     display.print(F("SD: Nao Detectado"));
   } else {
-    Serial.println(F("Cartao SD montado com sucesso!"));
-    sdAvailable = true;
-    display.setCursor(14, 40);
-    display.print(F("SD: Conectado!"));
+    uint8_t cardType = SD.cardType();
+    if (cardType == CARD_NONE) {
+      Serial.println(F("Modulo SD respondeu, mas nenhum cartao inserido."));
+      sdAvailable = false;
+      display.setCursor(14, 40);
+      display.print(F("SD: Sem Cartao"));
+    } else {
+      Serial.printf("Cartao SD montado! Tipo: %d, Tamanho: %lluMB\n",
+                    cardType, SD.cardSize() / (1024 * 1024));
+      sdAvailable = true;
+      display.setCursor(14, 40);
+      display.print(F("SD: Conectado!"));
+    }
   }
   display.display();
   delay(800);
